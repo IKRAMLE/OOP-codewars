@@ -1,16 +1,30 @@
-class Ship {
-    constructor(draft, crew) {
-      this.draft = draft; 
-      this.crew = crew;   
-    }
-    
-    isWorthIt() {
-      const crewDraft = this.draft - this.crew * 1.5;
-      return crewDraft > 20;
-    }
+class Account {
+  constructor(accountHolder, accountNumber, balance = 0) {
+      this.accountHolder = accountHolder;
+      this.accountNumber = accountNumber;
+      this.balance = balance;
   }
-  
-  const titanic = new Ship(15, 10); 
-  console.log(titanic.isWorthIt()); 
-  
-  
+
+  deposit(amount) {
+      this.balance += amount;
+  }
+
+  withdraw(amount) {
+      if (this.balance >= amount) {
+          this.balance -= amount;
+      }
+  }
+
+  getBalance() {
+      return this.balance;
+  }
+}
+
+let account1 = new Account("Alice", "12345", 500);
+let account2 = new Account("Bob", "67890", 1000);
+
+account1.deposit(200);
+account2.withdraw(500);
+
+console.log(account1.getBalance());  
+console.log(account2.getBalance());  
