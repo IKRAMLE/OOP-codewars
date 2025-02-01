@@ -1,34 +1,32 @@
-OOP: Object Oriented Piracy
+**Exercise: Bank Account Management System**
 
+**Objective:**
+Create a simple Bank Account Management System using Object-Oriented Programming (OOP) principles in JavaScript. The system will allow the creation of accounts, depositing and withdrawing money, and checking the balance of an account.
 
-Description:
-Ahoy matey!
+**Requirements:**
+**Account Class:**
+Create a class called Account with the following properties:
 
-You are a leader of a small pirate crew. And you have a plan. With the help of OOP you wish to make a pretty efficient system to identify ships with heavy booty on board!
+accountHolder: The name of the account holder (string).
+accountNumber: The unique account number (string).
+balance: The balance of the account (number, default to 0).
+The Account class should have the following methods:
 
-Unfortunately for you, people weigh a lot these days, so how do you know if a ship is full of gold and not people?
+deposit(amount): Add the given amount to the account's balance.
+withdraw(amount): Subtract the given amount from the account's balance. (If there are insufficient funds, do nothing.)
+getBalance(): Return the current balance of the account.
+Usage:
 
-You begin with writing a generic Ship class / struct:
+Create at least two accounts with different account holders and balances.
+Perform some deposits and withdrawals on these accounts.
+Print the balance of each account after the operations.
+Example:
+Creating Accounts:
 
-class Ship {
-  constructor(draft, crew) {
-    this.draft = draft
-    this.crew = crew
-  }
-}
-Every time your spies see a new ship enter the dock, they will create a new ship object based on their observations:
+Alice has an account with the number "12345" and a balance of 500.
+Bob has an account with the number "67890" and a balance of 1000.
+Operations:
 
-draft - an estimate of the ship's weight based on how low it is in the water
-crew - the count of crew on board
-const titanic = new Ship(15, 10);
-Task
-You have access to the ship "draft" and "crew". "Draft" is the total ship weight and "crew" is the number of humans on the ship.
-
-Each crew member adds 1.5 units to the ship draft. If after removing the weight of the crew, the draft is still more than 20, then the ship is worth looting. Any ship weighing that much must have a lot of booty!
-
-Add the method
-
-isWorthIt
-to decide if the ship is worthy to loot. For example:
-
-titanic.isWorthIt() // return false
+Deposit 200 into Alice's account.
+Withdraw 500 from Bob's account.
+Print the balances after the operations.
